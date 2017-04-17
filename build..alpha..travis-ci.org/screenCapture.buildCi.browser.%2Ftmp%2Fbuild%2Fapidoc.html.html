@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/leepowellcouk/mongoose-validator#readme"
-
-    >mongoose-validator (v1.2.5)</a>
+    <a href="https://github.com/leepowellcouk/mongoose-validator#readme">mongoose-validator (v1.2.5)</a>
 </h1>
 <h4>Validators for mongoose models utilising validator.js</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.mongoose-validator">module mongoose-validator</a><ol>
 
@@ -2061,9 +2054,9 @@
   var name         = options.validator;
   var args         = options.arguments || [];
   var passIfEmpty  = options.passIfEmpty !== undefined ? options.passIfEmpty : false;
-  var message      = options.message || errorMessages[name] || defaultErrorMessages[name] || &#x27;Error&#x27;;
+  var message      = options.message || errorMessages[name] || defaultErrorMessages[name] || 'Error';
   var validator    = (name instanceof Function) ? name : validatorjs[name];
-  var extend       = _.omit(options, &#x27;passIfEmpty&#x27;, &#x27;message&#x27;, &#x27;validator&#x27;, &#x27;arguments&#x27;);
+  var extend       = _.omit(options, 'passIfEmpty', 'message', 'validator', 'arguments');
 
   // Coerse args into an array
   args = !Array.isArray(args) ? [args] : args;
@@ -2071,7 +2064,7 @@
   // Interpolate message with argument values
   message = message.replace(/{ARGS\[(\d+)\]}/g, function (replace, argIndex) {
     var val = args[argIndex];
-    return val !== undefined ? val : &#x27;&#x27;;
+    return val !== undefined ? val : '';
   });
 
   if (validator) {
@@ -2079,7 +2072,7 @@
       validator: function(val, next) {
         var validatorArgs = [val].concat(args);
 
-        if (passIfEmpty &#x26;&#x26; (val === &#x27;&#x27; || val === null) || val === undefined) {
+        if (passIfEmpty &amp;&amp; (val === '' || val === null) || val === undefined) {
           return next(true);
         }
 
@@ -2089,7 +2082,7 @@
     }, extend);
   }
 
-  throw new Error(&#x27;Validator `&#x27; +  name + &#x27;` does not exist on validator.js&#x27;);
+  throw new Error('Validator `' +  name + '` does not exist on validator.js');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2106,10 +2099,10 @@
     <li>description and source-code<pre class="apidocCodePre">extend = function (name, fn, errorMsg) {
   if (!validatorjs[name]) {
     validatorjs[name]   = function () { return fn.apply(this, Array.prototype.slice.call(arguments)); };
-    errorMessages[name] = errorMsg || &#x27;Error&#x27;;
+    errorMessages[name] = errorMsg || 'Error';
   }
   else {
-    throw new Error(&#x27;Validator `&#x27; +  name + &#x27;` already exists on validator.js&#x27;);
+    throw new Error('Validator `' +  name + '` already exists on validator.js');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2128,9 +2121,9 @@
   var name         = options.validator;
   var args         = options.arguments || [];
   var passIfEmpty  = options.passIfEmpty !== undefined ? options.passIfEmpty : false;
-  var message      = options.message || errorMessages[name] || defaultErrorMessages[name] || &#x27;Error&#x27;;
+  var message      = options.message || errorMessages[name] || defaultErrorMessages[name] || 'Error';
   var validator    = (name instanceof Function) ? name : validatorjs[name];
-  var extend       = _.omit(options, &#x27;passIfEmpty&#x27;, &#x27;message&#x27;, &#x27;validator&#x27;, &#x27;arguments&#x27;);
+  var extend       = _.omit(options, 'passIfEmpty', 'message', 'validator', 'arguments');
 
   // Coerse args into an array
   args = !Array.isArray(args) ? [args] : args;
@@ -2138,7 +2131,7 @@
   // Interpolate message with argument values
   message = message.replace(/{ARGS\[(\d+)\]}/g, function (replace, argIndex) {
     var val = args[argIndex];
-    return val !== undefined ? val : &#x27;&#x27;;
+    return val !== undefined ? val : '';
   });
 
   if (validator) {
@@ -2146,7 +2139,7 @@
       validator: function(val, next) {
         var validatorArgs = [val].concat(args);
 
-        if (passIfEmpty &#x26;&#x26; (val === &#x27;&#x27; || val === null) || val === undefined) {
+        if (passIfEmpty &amp;&amp; (val === '' || val === null) || val === undefined) {
           return next(true);
         }
 
@@ -2156,7 +2149,7 @@
     }, extend);
   }
 
-  throw new Error(&#x27;Validator `&#x27; +  name + &#x27;` does not exist on validator.js&#x27;);
+  throw new Error('Validator `' +  name + '` does not exist on validator.js');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2291,9 +2284,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">validatorjs.init = function () {
     for (var name in validator) {
-        if (typeof validator[name] !== &#x27;function&#x27; || name === &#x27;toString&#x27; ||
-                name === &#x27;toDate&#x27; || name === &#x27;extend&#x27; || name === &#x27;init&#x27; ||
-                name === &#x27;isServerSide&#x27;) {
+        if (typeof validator[name] !== 'function' || name === 'toString' ||
+                name === 'toDate' || name === 'extend' || name === 'init' ||
+                name === 'isServerSide') {
             continue;
         }
         validator.extend(name, validator[name]);
@@ -2907,10 +2900,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">validatorjs.isServerSide = function () {
-    return typeof module === &#x27;object&#x27; &#x26;&#x26; module &#x26;&#x26;
-        typeof module.exports === &#x27;object&#x27; &#x26;&#x26;
-        typeof process === &#x27;object&#x27; &#x26;&#x26;
-        typeof require === &#x27;function&#x27;;
+    return typeof module === 'object' &amp;&amp; module &amp;&amp;
+        typeof module.exports === 'object' &amp;&amp;
+        typeof process === 'object' &amp;&amp;
+        typeof require === 'function';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3129,7 +3122,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">validatorjs.toDate = function (date) {
-    if (Object.prototype.toString.call(date) === &#x27;[object Date]&#x27;) {
+    if (Object.prototype.toString.call(date) === '[object Date]') {
         return date;
     }
     date = Date.parse(date);
@@ -3182,26 +3175,26 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">validatorjs.toString = function (input) {
-    if (typeof input !== &#x27;string&#x27;) {
+    if (typeof input !== 'string') {
         // The library validates strings only. Currently it coerces all input to a string, but this
         // will go away in an upcoming major version change. Print a deprecation notice for now
         if (!validator.coerce) {
-            throw new Error(&#x27;this library validates strings only&#x27;);
+            throw new Error('this library validates strings only');
         }
-        validator.deprecation(&#x27;you tried to validate a &#x27; + typeof input + &#x27; but this library &#x27; +
-                &#x27;(validator.js) validates strings only. Please update your code as this will &#x27; +
-                &#x27;be an error soon.&#x27;);
+        validator.deprecation('you tried to validate a ' + typeof input + ' but this library ' +
+                '(validator.js) validates strings only. Please update your code as this will ' +
+                'be an error soon.');
     }
-    if (typeof input === &#x27;object&#x27; &#x26;&#x26; input !== null) {
-        if (typeof input.toString === &#x27;function&#x27;) {
+    if (typeof input === 'object' &amp;&amp; input !== null) {
+        if (typeof input.toString === 'function') {
             input = input.toString();
         } else {
-            input = &#x27;[object Object]&#x27;;
+            input = '[object Object]';
         }
-    } else if (input === null || typeof input === &#x27;undefined&#x27; || (isNaN(input) &#x26;&#x26; !input.length)) {
-        input = &#x27;&#x27;;
+    } else if (input === null || typeof input === 'undefined' || (isNaN(input) &amp;&amp; !input.length)) {
+        input = '';
     }
-    return &#x27;&#x27; + input;
+    return '' + input;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3261,10 +3254,10 @@
     <li>description and source-code<pre class="apidocCodePre">extend = function (name, fn, errorMsg) {
   if (!validatorjs[name]) {
     validatorjs[name]   = function () { return fn.apply(this, Array.prototype.slice.call(arguments)); };
-    errorMessages[name] = errorMsg || &#x27;Error&#x27;;
+    errorMessages[name] = errorMsg || 'Error';
   }
   else {
-    throw new Error(&#x27;Validator `&#x27; +  name + &#x27;` already exists on validator.js&#x27;);
+    throw new Error('Validator `' +  name + '` already exists on validator.js');
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3410,9 +3403,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">init = function () {
     for (var name in validator) {
-        if (typeof validator[name] !== &#x27;function&#x27; || name === &#x27;toString&#x27; ||
-                name === &#x27;toDate&#x27; || name === &#x27;extend&#x27; || name === &#x27;init&#x27; ||
-                name === &#x27;isServerSide&#x27;) {
+        if (typeof validator[name] !== 'function' || name === 'toString' ||
+                name === 'toDate' || name === 'extend' || name === 'init' ||
+                name === 'isServerSide') {
             continue;
         }
         validator.extend(name, validator[name]);
@@ -4026,10 +4019,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isServerSide = function () {
-    return typeof module === &#x27;object&#x27; &#x26;&#x26; module &#x26;&#x26;
-        typeof module.exports === &#x27;object&#x27; &#x26;&#x26;
-        typeof process === &#x27;object&#x27; &#x26;&#x26;
-        typeof require === &#x27;function&#x27;;
+    return typeof module === 'object' &amp;&amp; module &amp;&amp;
+        typeof module.exports === 'object' &amp;&amp;
+        typeof process === 'object' &amp;&amp;
+        typeof require === 'function';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4248,7 +4241,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toDate = function (date) {
-    if (Object.prototype.toString.call(date) === &#x27;[object Date]&#x27;) {
+    if (Object.prototype.toString.call(date) === '[object Date]') {
         return date;
     }
     date = Date.parse(date);
@@ -4301,26 +4294,26 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function (input) {
-    if (typeof input !== &#x27;string&#x27;) {
+    if (typeof input !== 'string') {
         // The library validates strings only. Currently it coerces all input to a string, but this
         // will go away in an upcoming major version change. Print a deprecation notice for now
         if (!validator.coerce) {
-            throw new Error(&#x27;this library validates strings only&#x27;);
+            throw new Error('this library validates strings only');
         }
-        validator.deprecation(&#x27;you tried to validate a &#x27; + typeof input + &#x27; but this library &#x27; +
-                &#x27;(validator.js) validates strings only. Please update your code as this will &#x27; +
-                &#x27;be an error soon.&#x27;);
+        validator.deprecation('you tried to validate a ' + typeof input + ' but this library ' +
+                '(validator.js) validates strings only. Please update your code as this will ' +
+                'be an error soon.');
     }
-    if (typeof input === &#x27;object&#x27; &#x26;&#x26; input !== null) {
-        if (typeof input.toString === &#x27;function&#x27;) {
+    if (typeof input === 'object' &amp;&amp; input !== null) {
+        if (typeof input.toString === 'function') {
             input = input.toString();
         } else {
-            input = &#x27;[object Object]&#x27;;
+            input = '[object Object]';
         }
-    } else if (input === null || typeof input === &#x27;undefined&#x27; || (isNaN(input) &#x26;&#x26; !input.length)) {
-        input = &#x27;&#x27;;
+    } else if (input === null || typeof input === 'undefined' || (isNaN(input) &amp;&amp; !input.length)) {
+        input = '';
     }
-    return &#x27;&#x27; + input;
+    return '' + input;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4511,9 +4504,9 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">init = function () {
     for (var name in validator) {
-        if (typeof validator[name] !== &#x27;function&#x27; || name === &#x27;toString&#x27; ||
-                name === &#x27;toDate&#x27; || name === &#x27;extend&#x27; || name === &#x27;init&#x27; ||
-                name === &#x27;isServerSide&#x27;) {
+        if (typeof validator[name] !== 'function' || name === 'toString' ||
+                name === 'toDate' || name === 'extend' || name === 'init' ||
+                name === 'isServerSide') {
             continue;
         }
         validator.extend(name, validator[name]);
@@ -5307,10 +5300,10 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isServerSide = function () {
-    return typeof module === &#x27;object&#x27; &#x26;&#x26; module &#x26;&#x26;
-        typeof module.exports === &#x27;object&#x27; &#x26;&#x26;
-        typeof process === &#x27;object&#x27; &#x26;&#x26;
-        typeof require === &#x27;function&#x27;;
+    return typeof module === 'object' &amp;&amp; module &amp;&amp;
+        typeof module.exports === 'object' &amp;&amp;
+        typeof process === 'object' &amp;&amp;
+        typeof require === 'function';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5594,7 +5587,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toDate = function (date) {
-    if (Object.prototype.toString.call(date) === &#x27;[object Date]&#x27;) {
+    if (Object.prototype.toString.call(date) === '[object Date]') {
         return date;
     }
     date = Date.parse(date);
@@ -5718,3 +5711,4 @@
     ]
 </div>
 </div>
+</body></html>
