@@ -1,4 +1,7 @@
-# api documentation for  [mongoose-validator (v1.2.5)](https://github.com/leepowellcouk/mongoose-validator#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-mongoose-validator.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mongoose-validator) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mongoose-validator.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mongoose-validator)
+# npmdoc-mongoose-validator
+
+#### basic api documentation for  [mongoose-validator (v1.2.5)](https://github.com/leepowellcouk/mongoose-validator#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-mongoose-validator.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-mongoose-validator) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-mongoose-validator.svg)](https://travis-ci.org/npmdoc/node-npmdoc-mongoose-validator)
+
 #### Validators for mongoose models utilising validator.js
 
 [![NPM](https://nodei.co/npm/mongoose-validator.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mongoose-validator)
@@ -98,7 +101,8 @@
     "scripts": {
         "test": "mocha -R list"
     },
-    "version": "1.2.5"
+    "version": "1.2.5",
+    "bin": {}
 }
 ```
 
